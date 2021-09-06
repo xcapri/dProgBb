@@ -29,8 +29,13 @@ class x504f4e424f545f424f554e54:
 		self.keybounty = [
 			"Bug Bounty",
             "Security",
+			"security-vulnerabilities",
             "responsible-disclosure",
             "Responsible Disclosure",
+			"vulnerability report",
+			"report-a-vulnerability",
+			"legal-security",
+			"bug-bounty"
 		]
     def x62616e6e6572(self): 
 		print("""{}
