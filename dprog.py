@@ -76,19 +76,20 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
 			pass
     
     def x63656b436f6465(self, domain): # cek status code
-        try:
-			r = requests.get(domain, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"}, timeout=20, allow_redirects=False)
+        self.x676173476f6c6574(domain)
+		# try:
+		# 	r = requests.get(domain, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"}, timeout=20, allow_redirects=False)
 			
-			if r.status_code == 200:
-				self.x676173476f6c6574(domain)
-			elif r.status_code == 302:
-				self.x676173476f6c6574(domain)
-			elif r.status_code == 301:
-				self.x676173476f6c6574(domain)
-			else:
-				print ("{}[!] Can't Access {}".format(self.red, domain))
-        except:
-			print ("{}[!] Can't Access {}".format(self.red, domain))
+		# 	if r.status_code == 200:
+		# 		self.x676173476f6c6574(domain)
+		# 	elif r.status_code == 302:
+		# 		self.x676173476f6c6574(domain)
+		# 	elif r.status_code == 301:
+		# 		self.x676173476f6c6574(domain)
+		# 	else:
+		# 		print ("{}[!] Can't Access {}".format(self.red, domain))
+        # except:
+		# 	print ("{}[!] Can't Access {}".format(self.red, domain))
     def x676173476f6c6574(self, domain): # buat ngerequest
         try:
             url = domain
