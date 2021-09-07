@@ -1,0 +1,22 @@
+research-reports
+Bug Bounty
+Security
+security-vulnerabilities
+responsible-disclosure
+Responsible Disclosure
+vulnerability report
+report-a-vulnerability
+legal-security
+bug-bounty
+security-bug-report
+white_hat
+terms-bounty
+security_policy
+support-vulnerability
+securitydisclosureprogram
+report-vulnerability
+contribute-bug-bounty
+report-security-issues
+responsible_disclosure
+bug-beacon
+reportsecurityvulnerability
