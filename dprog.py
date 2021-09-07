@@ -25,29 +25,9 @@ class x504f4e424f545f424f554e54:
 			os.makedirs(self.Outputs)
 		except:
 			pass
-		# TAMBAHIN SENDIRI 
-		self.keybounty = [
-			"Bug Bounty",
-            "Security",
-			"security-vulnerabilities",
-            "responsible-disclosure",
-            "Responsible Disclosure",
-			"vulnerability report",
-			"report-a-vulnerability",
-			"legal-security",
-			"bug-bounty",
-			"security-bug-report",
-			"white_hat",
-			"terms-bounty",
-			"security_policy",
-			"support-vulnerability",
-			"securitydisclosureprogram",
-			"report-vulnerability",
-			"contribute-bug-bounty",
-			"report-security-issues",
-			"responsible_disclosure",
-			"bug-beacon"
-		]
+		
+		# tambah keyword di file listkey.txt
+		self.keybounty = [i.strip() for i in open('listkey.txt').readlines()]
     def x62616e6e6572(self): 
 		print("""{}
 
@@ -92,7 +72,7 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
             r = requests.get(url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"})
             self.x636865636b(r, url)
         except:
-            pass
+			pass
 
 
 x4c6f6164436c617373 = x504f4e424f545f424f554e54() # manggil class
