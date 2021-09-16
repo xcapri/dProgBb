@@ -93,7 +93,7 @@ x6c69737472616e646f6d776562 = [i.strip() for i in open(str(raw_input("List : "))
 x62616e74657265 = Pool(int(input('Thread : ')))   # input jumlah threads
 
 try:
-    x62616e74657265.map(x4c6f6164436c617373.x676173476f6c6574, x6c69737472616e646f6d776562)           # lets go 
+    x62616e74657265.map(x4c6f6164436c617373.x676173476f6c6574, x6c69737472616e646f6d776562)     # lets go 
 except KeyboardInterrupt:
         print("CTRL+C Detect, Exit!")
         exit()
