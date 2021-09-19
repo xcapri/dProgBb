@@ -20,3 +20,4 @@ report-security-issues
 responsible_disclosure
 bug-beacon
 reportsecurityvulnerability
+safety-and-security
