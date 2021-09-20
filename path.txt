@@ -2,3 +2,4 @@
 /.well-known/security.txt
 /support/contact-security
 /contact-security
+/trust/security
