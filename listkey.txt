@@ -21,3 +21,5 @@ responsible_disclosure
 bug-beacon
 reportsecurityvulnerability
 safety-and-security
+wall of fame
+hall of fame
