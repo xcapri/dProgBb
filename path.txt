@@ -4,3 +4,5 @@
 /contact-security
 /trust/security
 /en/contact-us
+/walloffame
+/halloffame
