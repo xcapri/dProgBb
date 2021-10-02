@@ -61,14 +61,16 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                 else:
                     print (self.red+"[!] Not found  "+key+" on "+url)
 
-        except:
-		pass
+        except KeyboardInterrupt:
+		print("CTRL+C Detect, Exit!")
+		exit()
     
     def x73617665(self, title, url): # function buat save result
 		try:
 			open(self.Outputs+"/"+title, "a").write(url+"\n")
-		except:
-			pass
+		except KeyboardInterrupt:
+			print("CTRL+C Detect, Exit!")
+			exit()
 
     def x676173476f6c6574(self, domain): # buat ngerequest
         try:
@@ -83,8 +85,9 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                     r = requests.get(url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"}, allow_redirects=True)
                     hr = requests.get(r.url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"})
                     self.x636865636b(hr, r.url)
-        except:
-		pass
+        except KeyboardInterrupt:
+		print("CTRL+C Detect, Exit!")
+		exit()
 
 # try:
 x4c6f6164436c617373 = x504f4e424f545f424f554e54() # manggil class
