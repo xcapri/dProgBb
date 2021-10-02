@@ -103,4 +103,4 @@ except KeyboardInterrupt:
 
 
 # refrensi code :
-# aHR0cHM6Ly9naXRodWIuY29tL2p1c3Rha2F6aC9MYUNyb3Q= (Akazh)
+# https://github.com/justakazh/LaCrot (Akazh)
