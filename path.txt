@@ -1,4 +1,3 @@
-
 /.well-known/security.txt
 /support/contact-security
 /contact-security
@@ -6,3 +5,22 @@
 /en/contact-us
 /walloffame
 /halloffame
+/policy/security-reward-program
+/security-bugbounty
+/en/pages/security
+/info/security
+/support/security-rewards/about/
+/security/vulnerability-disclosure/
+/security/responsible-disclosure
+/security-safety/information-security/hall-fame
+/assets/pdf/documents/responsible_disclosure.pdf
+/assets/pdf/documents/bugbounty.pdf
+/legal-compliance/security
+/security-research-disclosure/
+/security-vulnerability-program
+/security-statement/
+/security_policy/
+/security-centre
+/bugbounty-reward-program
+/bug-bounty-program/
+/bug-bounty-program/security
