@@ -78,12 +78,12 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
 
                 if domain.startswith(('http://', 'https://')):
                     url = domain+pPath
-                    r = requests.get(url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"})
+                    r = requests.get(url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"}, verify=False)
                     self.x636865636b(r, url)
                 else:
                     url = 'http://'+domain+pPath
-                    r = requests.get(url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"}, allow_redirects=True)
-                    hr = requests.get(r.url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"})
+                    r = requests.get(url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"}, allow_redirects=True, verify=False)
+                    hr = requests.get(r.url, headers={"user-agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:77.0; dProgBb) Gecko/20190101 Firefox/77.0"}, verify=False)
                     self.x636865636b(hr, r.url)
         except KeyboardInterrupt:
 		print("CTRL+C Detect, Exit!")
