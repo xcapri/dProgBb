@@ -1,0 +1,15 @@
+
+FOUND=security@,security@
+https://churnbuster.io/security
+
+FOUND=security@
+https://rechargepayments.com/.well-known/security.txt
+
+FOUND=security@,security@
+https://www.classdojo.com/uk-ua/securitydisclosureprogram/
+
+FOUND=security@,security@
+https://www.classdojo.com/securitydisclosureprogram/
+
+FOUND=security@
+https://curl.se/.well-known/security.txt

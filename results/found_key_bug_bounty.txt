@@ -1,0 +1,9 @@
+
+FOUND=bug bounty,Bug Bounty
+https://cloudcannon.com/security
+
+FOUND=Bug Bounty,Bug Bounty,Bug Bounty,Bug Bounty,bug bounty,bug bounty,Bug Bounty,Bug Bounty,Bug Bounty,bounties,bug bounty,Bug Bounty,Bounties,bug bounty,Bug Bounty,bounties,bounties,bug bounty
+https://curl.se/docs/bugbounty.html
+
+FOUND=bug bounty,bug bounty,bug bounty,bug bounty,bug bounty,bug bounty,bug bounty,bug bounty,Bug Bounty,bug bounty,bug bounty,Bug Bounty,Bug Bounty
+https://mesibo.com/bug-bounty-program/
