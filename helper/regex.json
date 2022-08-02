@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "file" : "email_security.txt",
+            "name" : "EMAIL SECURITY",
+            "regex" : "security@"
+        },
+        {
+            "file" : "key_bug_bounty.txt",
+            "name" : "Bug Bounty",
+            "regex" : "(Bug Bounty|BUG BOUNTY|bounties)"
+        },
+        {
+            "file" : "key_Vulnerability.txt",
+            "name" : "Vulnerability",
+            "regex" : "(Vulnerability|vulnerabilities)"
+        },
+        {
+            "file" : "key_Program_Rules.txt",
+            "name" : "Program Rules",
+            "regex" : "Program Rules"
+        },
+        {
+            "file" : "key_Submit_your_report.txt",
+            "name" : "Submit your report",
+            "regex" : "Submit your report"
+        },
+        {
+            "file" : "key_rewards.txt",
+            "name" : "Reward",
+            "regex" : "(eligible for a reward|rewards|will be paid)"
+        },
+        {
+            "file" : "key_based_platform.txt",
+            "name" : "Platform",
+            "regex" : "(Hackerone program)"
+        }
+        
+    ]
+}       
