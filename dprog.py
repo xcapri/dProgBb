@@ -56,12 +56,12 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                 findkey = re.compile(r""+_data["regex"],re.IGNORECASE)
                 output = findkey.findall(str(body))
                 if len(output) > 0 :
-                    print("\n"+Fore.GREEN+"[FOUND] "+Fore.RESET+domain+Fore.GREEN+" ( "+_data["name"]+" | "+ str(output)  +" )"+Fore.RESET)
+                    print("\n"+Fore.GREEN+"[POSSBOUNTY] "+Fore.RESET+domain+Fore.GREEN+" ( "+_data["name"]+" | "+ str(output)  +" )"+Fore.RESET)
                     datares = "\nFOUND="+str(','.join(output))+"\n"+domain
                     saveres = open("results/found_"+_data["file"], "a+")
                     saveres.write(datares+"\n")
                 else:
-                    print(Fore.RED+"[NULLFOUND] "+Fore.RESET+domain+Fore.RED+" ( "+_data["name"]+" | NULL )"+Fore.RESET)
+                    print(Fore.RED+"[NOTFOUND] "+Fore.RESET+domain+Fore.RED+" ( "+_data["name"]+" | NULL )"+Fore.RESET)
         except KeyboardInterrupt:
             print(f"CTRL+C Detect, Exit!")
             exit()
