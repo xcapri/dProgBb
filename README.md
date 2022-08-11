@@ -25,4 +25,7 @@ If you want to contribute, you can add a path or regex around the bug bounty
 * [Path](/helper/path.txt) 
 * [Regex](/helper/regex.json)
 
+### Support 
+Follow my organization <br>https://github.com/tegal1337
+
 ### Thanks
