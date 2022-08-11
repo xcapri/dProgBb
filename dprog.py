@@ -47,6 +47,12 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                     print(Fore.RED+"[FIND] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
                 else:
                     self.checkKeyonResponse(getbody.text, full_url) # send body to key response
+	except ConnectionError:
+            pass
+        except requests.exceptions.Timeout:
+            pass
+        except requests.exceptions.ReadTimeout:
+            pass
         except KeyboardInterrupt:
             print(f"CTRL+C Detect, Exit!")
             exit()
@@ -71,6 +77,12 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
             self.get(domain)
         except ConnectionError:
             print(f"No Internet Connection")
+	except ConnectionError:
+            pass
+        except requests.exceptions.Timeout:
+            pass
+        except requests.exceptions.ReadTimeout:
+            pass
         except KeyboardInterrupt:
             print(f"CTRL+C Detect, Exit!")
             exit()
