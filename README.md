@@ -16,6 +16,12 @@ You can run like
 #### Reference
 * https://github.com/JoyGhoshs/findbb (FindBBProgram) 🤘
 #### Demo
-You can see this video for demo
-[![Watch the video](https://img.youtube.com/vi/z5IkjxTGHa8/maxresdefault.jpg)](https://youtu.be/z5IkjxTGHa8)
+You can see this video for demo : <br>
+https://youtu.be/z5IkjxTGHa8
 
+### Contribution
+If you want to contribute, you can add a path or regex around the bug bounty
+* [Path](/helper/path.txt) 
+* [Regex](/helper/regex.json)
+
+### Thanks
