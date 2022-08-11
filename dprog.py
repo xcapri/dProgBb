@@ -76,8 +76,6 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
         try:
             self.get(domain)
         except ConnectionError:
-            print(f"No Internet Connection")
-	except ConnectionError:
             pass
         except requests.exceptions.Timeout:
             pass
