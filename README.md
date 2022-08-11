@@ -10,8 +10,8 @@ dProg is tool for Bug bounty program detection by similar <i>keyword</i> on bug 
 * and run like a below
 #### Run
 You can run like
-* Oneliner <code>cat list | httpx | py dprog.py (--thread / -t) 20</code>
-* Oneliner with notify <code>cat list | httpx | py dprog.py (--thread / -t) 20 | grep "POSSBOUNTY" | sort -u | notify -id dprog </code>
+* Oneliner <code>cat list | httpx | python3 dprog.py (--thread / -t) 20</code>
+* Oneliner with notify <code>cat list | httpx | python3 dprog.py (--thread / -t) 20 | grep "POSSBOUNTY" | sort -u | notify -id dprog </code>
 * By input list <code>py dprog.py</code>
 #### Reference
 * https://github.com/JoyGhoshs/findbb (FindBBProgram) 🤘
