@@ -36,7 +36,7 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
         Start date: {}
 			""".format(random.choice(self.radncolor), "Detect Program Bug Bounty",  "Mung nggo golet-golet, syukur nemu", self.date))
     
-    
+
     def get(self, domain):
         try:
             for xpath in self.pathbounty:
@@ -46,8 +46,8 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                     or "No route" in getbody.text or "Not Found" in getbody.text or "404" in getbody.text):
                     print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
                 else:
-                    self.checkKeyonResponse(getbody.text, full_url) # send body to key response
-	except ConnectionError:
+                    self.checkKeyonResponse(getbody.text, full_url) # send body to key response    
+        except ConnectionError:
             pass
         except requests.exceptions.Timeout:
             pass
