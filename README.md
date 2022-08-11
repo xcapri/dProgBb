@@ -7,6 +7,7 @@ dProg is tool for Bug bounty program detection by similar <i>keyword</i> on bug 
 #### Instalation
 * <code>git clone https://github.com/xcapri/dProgBb.git</code>
 * <code>cd dProgBb</code>
+* <code>pip3 install -r helper/requirements.txt</code>
 * and run like a below
 #### Run
 You can run like
