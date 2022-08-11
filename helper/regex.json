@@ -31,6 +31,11 @@
             "regex" : "(eligible for a reward|rewards|will be paid)"
         },
         {
+            "file" : "key_responsible_disclosure.txt",
+            "name" : "Reward",
+            "regex" : "(responsible-disclosure|Responsible Disclosure)"
+        },
+        {
             "file" : "key_based_platform.txt",
             "name" : "Platform",
             "regex" : "(Hackerone program)"
