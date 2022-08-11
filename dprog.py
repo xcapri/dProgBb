@@ -44,7 +44,7 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                 getbody = requests.get(full_url, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
                 if (getbody.status_code == 404 or getbody.status_code == 403 
                     or "No route" in getbody.text or "Not Found" in getbody.text):
-                    print(Fore.RED+"[FIND] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
+                    print(Fore.RED+"[NOTFOUND] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
                 else:
                     self.checkKeyonResponse(getbody.text, full_url) # send body to key response
 	except ConnectionError:
