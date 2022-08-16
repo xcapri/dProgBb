@@ -1,5 +1,6 @@
 import requests,datetime,os,random,json,optparse,re,sys
 from multiprocessing.dummy import Pool
+from requests.exceptions import *
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 from colorama import init, Fore, Back, Style
@@ -9,6 +10,7 @@ class dProgs:
     def __init__(self):
         self.keybounty = json.load(open('helper/regex.json', "r", encoding="utf-8"))
         self.pathbounty = [i.strip() for i in open('helper/path.txt').readlines()]
+	self.reqexcpet   = ConnectionError, Timeout, ReadTimeout, TooManyRedirects, InvalidURL, ProxyError, HTTPError, SSLError, ProtocolError, ChunkedEncodingError
         self.radncolor = [Fore.RED, Fore.CYAN, Fore.WHITE, Fore.GREEN, Fore.YELLOW, Fore.BLUE]
         self.date = datetime.datetime.now().date()
         self.headers = {
@@ -47,11 +49,7 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                     print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
                 else:
                     self.checkKeyonResponse(getbody.text, full_url) # send body to key response    
-        except ConnectionError:
-            pass
-        except requests.exceptions.Timeout:
-            pass
-        except requests.exceptions.ReadTimeout:
+        except (self.reqexcpet) as e:
             pass
         except KeyboardInterrupt:
             print(f"CTRL+C Detect, Exit!")
@@ -75,11 +73,7 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
     def req(self, domain):
         try:
             self.get(domain)
-        except ConnectionError:
-            pass
-        except requests.exceptions.Timeout:
-            pass
-        except requests.exceptions.ReadTimeout:
+        except (self.reqexcpet) as e:
             pass
         except KeyboardInterrupt:
             print(f"CTRL+C Detect, Exit!")
