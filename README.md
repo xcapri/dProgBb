@@ -12,6 +12,7 @@ dProg is tool for Bug bounty program detection by similar <i>keyword</i> on bug 
 #### Run
 You can run like
 * Oneliner <code>cat list | httpx | python3 dprog.py (--thread / -t) 20</code>
+* Oneliner <code>cat list | ./hakrawler | sort -u | python3 dprog.py (--thread / -t) 10 | grep "POSSBOUNTY" | notify</code>
 * Oneliner with notify <code>cat list | httpx | python3 dprog.py (--thread / -t) 20 | grep "POSSBOUNTY" | sort -u | notify -id dprog </code>
 * By input list <code>py dprog.py</code>
 #### Reference
