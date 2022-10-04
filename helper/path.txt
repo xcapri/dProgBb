@@ -36,3 +36,9 @@
 /en/page/responsible-disclosure-notification
 /feedback/security
 /company/disclosure
+/en/responsible-disclosure
+/security/whitehat
+/help/a/responsible-disclosure
+/responsible-disclosure/
+
+
