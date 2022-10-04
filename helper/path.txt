@@ -31,3 +31,5 @@
 /bug-bounty-program/security
 /company/disclosure/
 /engineering/bug-bounty-program/
+/responsible-disclosure-policy
+/vulnerability-disclosure
