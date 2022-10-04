@@ -36,3 +36,7 @@
 /en/page/responsible-disclosure-notification
 /feedback/security
 /company/disclosure
+/researcher/programs/telenet/telenetgroup/detail
+/support/contact-security
+/en-us/features/security/bug-bounty
+/about-us/policies/bug-bounty-program/
