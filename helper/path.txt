@@ -36,3 +36,7 @@
 /en/page/responsible-disclosure-notification
 /feedback/security
 /company/disclosure
+/bug-bounty-program/
+/security/disclosure/
+/bug-bounty/
+/en/security/
