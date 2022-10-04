@@ -32,7 +32,7 @@
         },
         {
             "file" : "key_responsible_disclosure.txt",
-            "name" : "Reward",
+            "name" : "Responsible",
             "regex" : "(responsible-disclosure|Responsible Disclosure)"
         },
         {
