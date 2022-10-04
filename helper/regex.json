@@ -33,7 +33,7 @@
         {
             "file" : "key_responsible_disclosure.txt",
             "name" : "Responsible",
-            "regex" : "(responsible-disclosure|Responsible Disclosure|Responsible Disclosure notification)"
+            "regex" : "(responsible-disclosure|Responsible Disclosure)"
         },
         {
             "file" : "key_based_platform.txt",
