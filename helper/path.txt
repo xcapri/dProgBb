@@ -33,3 +33,6 @@
 /engineering/bug-bounty-program/
 /responsible-disclosure-policy
 /vulnerability-disclosure
+/en/page/responsible-disclosure-notification
+/feedback/security
+/company/disclosure
