@@ -29,3 +29,5 @@
 /bugbounty-reward-program
 /bug-bounty-program/
 /bug-bounty-program/security
+/company/disclosure/
+/engineering/bug-bounty-program/
