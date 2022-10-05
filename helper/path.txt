@@ -48,3 +48,10 @@
 /bug-bounty/guidelines
 /en-us/features/security/bug-bounty
 /about-us/policies/bug-bounty-program/
+/vulnerability-disclosure-policy/
+/security/responsible-disclosure-program
+/policies/security/responsible-disclosure
+/security/report
+/en/digital-security/responsible-disclosure/
+/security-responsible-disclosure
+/corporate/security/responsible-disclosure
