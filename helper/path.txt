@@ -46,3 +46,5 @@
 /report
 /More/bugBounty
 /bug-bounty/guidelines
+/en-us/features/security/bug-bounty
+/about-us/policies/bug-bounty-program/
