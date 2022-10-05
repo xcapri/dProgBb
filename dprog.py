@@ -10,7 +10,7 @@ class dProgs:
     def __init__(self):
         self.keybounty = json.load(open('helper/regex.json', "r", encoding="utf-8"))
         self.pathbounty = [i.strip() for i in open('helper/path.txt').readlines()]
-	self.reqexcpet   = ConnectionError, Timeout, ReadTimeout, TooManyRedirects, InvalidURL, ProxyError, HTTPError, SSLError, ChunkedEncodingError
+        self.reqexcpet   = ConnectionError, Timeout, ReadTimeout, TooManyRedirects, InvalidURL, ProxyError, HTTPError, SSLError, ChunkedEncodingError
         self.radncolor = [Fore.RED, Fore.CYAN, Fore.WHITE, Fore.GREEN, Fore.YELLOW, Fore.BLUE]
         self.date = datetime.datetime.now().date()
         self.headers = {
