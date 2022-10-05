@@ -1,4 +1,3 @@
-
 /security
 /.well-known/security.txt
 /uk-ua/securitydisclosureprogram/
@@ -36,7 +35,10 @@
 /en/page/responsible-disclosure-notification
 /feedback/security
 /company/disclosure
-/bug-bounty-program/
 /security/disclosure/
 /bug-bounty/
 /en/security/
+/en/responsible-disclosure
+/security/whitehat
+/help/a/responsible-disclosure
+/responsible-disclosure/
