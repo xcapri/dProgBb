@@ -36,7 +36,13 @@
 /en/page/responsible-disclosure-notification
 /feedback/security
 /company/disclosure
-/pwa-hlp/mmtbb/report
+/security/disclosure/
+/bug-bounty/
+/en/security/
+/en/responsible-disclosure
+/security/whitehat
+/help/a/responsible-disclosure
+/responsible-disclosure/
+/report
 /More/bugBounty
-/en-us/msrc/bounty-microsoft-cloud
 /bug-bounty/guidelines
