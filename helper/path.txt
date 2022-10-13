@@ -9,6 +9,7 @@
 /trust/security
 /en/contact-us
 /walloffame
+/wof
 /halloffame
 /policy/security-reward-program
 /security-bugbounty
