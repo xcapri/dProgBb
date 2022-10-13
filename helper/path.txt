@@ -56,3 +56,6 @@
 /en/digital-security/responsible-disclosure/
 /security-responsible-disclosure
 /corporate/security/responsible-disclosure
+/terms/bounty
+/en-us/bug-bounty
+/contributing/bug-bounty/
