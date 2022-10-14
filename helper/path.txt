@@ -59,3 +59,5 @@
 /terms/bounty
 /en-us/bug-bounty
 /contributing/bug-bounty/
+/report-security-incident
+/report-security-issue/
