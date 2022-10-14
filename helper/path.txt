@@ -61,3 +61,6 @@
 /contributing/bug-bounty/
 /report-security-incident
 /report-security-issue/
+/reference/security
+/docs/security-incident
+/vulnerability-reward-program/
