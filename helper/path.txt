@@ -64,3 +64,5 @@
 /reference/security
 /docs/security-incident
 /vulnerability-reward-program/
+/support/security
+/security-vulnerability-disclosure-policy
