@@ -72,4 +72,6 @@
 /legal/full-disclosure-security-policy
 /report-site-security-issues
 /vulnerability-disclosure-program
-
+/about-us/about-our-site/responsible-disclosure
+/disclosure-policy.html
+/privacy/responsible-disclosure
