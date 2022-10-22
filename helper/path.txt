@@ -66,3 +66,6 @@
 /vulnerability-reward-program/
 /support/security
 /security-vulnerability-disclosure-policy
+/reportingsecurityissues
+/vulnerability-responses
+/responsible-disclosure-policy
