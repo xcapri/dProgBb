@@ -64,5 +64,5 @@
 /reference/security
 /docs/security-incident
 /vulnerability-reward-program/
-/en/report-a-security-problem/
-/vdp
+/terms/bug-bounty
+/terms/responsible-disclosure
