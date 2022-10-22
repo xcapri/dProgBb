@@ -69,3 +69,7 @@
 /reportingsecurityissues
 /vulnerability-responses
 /responsible-disclosure-policy
+/legal/full-disclosure-security-policy
+/report-site-security-issues
+/vulnerability-disclosure-program
+
