@@ -69,3 +69,13 @@
 /reportingsecurityissues
 /vulnerability-responses
 /responsible-disclosure-policy
+/legal/full-disclosure-security-policy
+/report-site-security-issues
+/vulnerability-disclosure-program
+/about-us/about-our-site/responsible-disclosure
+/disclosure-policy.html
+/privacy/responsible-disclosure
+/security-bounty
+/v1/static/canon_vdp_program-policy
+/legal/reporting-security-vulnerability
+
