@@ -64,6 +64,5 @@
 /reference/security
 /docs/security-incident
 /vulnerability-reward-program/
-/en-us/vdp/
-/corporate/vdp
-/contact/vulnerability-disclosure
+/en/report-a-security-problem/
+/vdp
