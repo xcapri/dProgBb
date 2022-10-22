@@ -78,4 +78,6 @@
 /security-bounty
 /v1/static/canon_vdp_program-policy
 /legal/reporting-security-vulnerability
-
+/nl-nl/over-ons/website/responsible-disclosure
+/central-security-project
+/hc/en-us/articles/360001114273-How-do-I-Claim-a-Bug-Bounty-or-Report-a-Vulnerability-
