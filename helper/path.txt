@@ -81,3 +81,7 @@
 /nl-nl/over-ons/website/responsible-disclosure
 /central-security-project
 /hc/en-us/articles/360001114273-How-do-I-Claim-a-Bug-Bounty-or-Report-a-Vulnerability-
+/kleine-lettertjes/coordinated-vulnerability-disclosure
+/about-us/security/responsible-disclosure-policy
+/company/responsible-disclosure
+
