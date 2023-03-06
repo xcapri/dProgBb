@@ -45,6 +45,7 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                 full_url = "{}{}".format(domain,xpath)
                 getbody = requests.get(full_url, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
                 if (getbody.status_code == 404 or getbody.status_code == 403 
+		    or "Debug" in getbody.text
                     or "No route" in getbody.text or "Not Found" in getbody.text or "404" in getbody.text):
                     print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
                 else:
