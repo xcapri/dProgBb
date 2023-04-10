@@ -4,6 +4,8 @@ from requests.exceptions import *
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 from colorama import init, Fore, Back, Style
+from urllib.parse import urlparse
+
 init()
 
 class dProgs:
@@ -41,15 +43,22 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
 
     def get(self, domain):
         try:
-            for xpath in self.pathbounty:
-                full_url = "{}{}".format(domain,xpath)
-                getbody = requests.get(full_url, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
-                if (getbody.status_code == 404 or getbody.status_code == 403 
-		    or "Debug" in getbody.text
-                    or "No route" in getbody.text or "Not Found" in getbody.text or "404" in getbody.text):
-                    print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
+            if len(urlparse(domain).path) >= 1 :
+                getbody = requests.get(domain, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
+                if (getbody.status_code in [404, 403] 
+                        or any(error in getbody.text for error in ["Debug", "No route", "Not Found", "404"])):
+                        print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+domain+Fore.RED+" Not Found "+Fore.RESET)
                 else:
-                    self.checkKeyonResponse(getbody.text, full_url) # send body to key response    
+                    self.checkKeyonResponse(getbody.text, domain) # send body to key response    
+            else:
+                for xpath in self.pathbounty:
+                    full_url = "{}{}".format(domain,xpath)
+                    getbody = requests.get(full_url, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
+                    if (getbody.status_code in [404, 403] 
+                        or any(error in getbody.text for error in ["Debug", "No route", "Not Found", "404"])):
+                        print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
+                    else:
+                        self.checkKeyonResponse(getbody.text, full_url) # send body to key response    
         except (self.reqexcpet) as e:
             pass
         except KeyboardInterrupt:
