@@ -43,22 +43,16 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
 
     def get(self, domain):
         try:
-            if len(urlparse(domain).path) >= 1 :
-                getbody = requests.get(domain, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
+            checkpath = " " if len(urlparse(domain).path) >= 1 else self.pathbounty
+            for xpath in checkpath:
+                full_url = "{}{}".format(domain,xpath).replace(" ","")
+                getbody = requests.get(full_url, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
                 if (getbody.status_code in [404, 403] 
                         or any(error in getbody.text for error in ["Debug", "No route", "Not Found", "404"])):
-                        print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+domain+Fore.RED+" Not Found "+Fore.RESET)
-                else:
-                    self.checkKeyonResponse(getbody.text, domain) # send body to key response    
-            else:
-                for xpath in self.pathbounty:
-                    full_url = "{}{}".format(domain,xpath)
-                    getbody = requests.get(full_url, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
-                    if (getbody.status_code in [404, 403] 
-                        or any(error in getbody.text for error in ["Debug", "No route", "Not Found", "404"])):
                         print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
-                    else:
-                        self.checkKeyonResponse(getbody.text, full_url) # send body to key response    
+                else:
+                    self.checkKeyonResponse(getbody.text, full_url) # send body to key response    
+                
         except (self.reqexcpet) as e:
             pass
         except KeyboardInterrupt:
