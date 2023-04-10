@@ -1,9 +1,9 @@
 {
     "data": [
         {
-            "file" : "email_security.txt",
-            "name" : "EMAIL SECURITY",
-            "regex" : "security@"
+            "file" : "key_email_bounty.txt",
+            "name" : "Email Report",
+            "regex" : "(security@|bugbounty@|bugreport@|vulnerability@|security-team@|responsible-disclosure@|infosec@|security-alert@|secure@|security-alerts@|security-notification@|secure-report@|security-incident@|security-response@|cybersecurity@|reportabug@|security-research@|security-reports@)"
         },
         {
             "file" : "key_bug_bounty.txt",
