@@ -6,6 +6,7 @@
 /support/contact-security
 /docs/bugbounty.html
 /contact-security
+/contact
 /trust/security
 /en/contact-us
 /walloffame
