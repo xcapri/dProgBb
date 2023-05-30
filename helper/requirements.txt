@@ -1,2 +1,2 @@
 colorama==0.4.3
-requests==2.27.1
+requests==2.31.0
