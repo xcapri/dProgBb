@@ -28,7 +28,7 @@
         {
             "file" : "key_rewards.txt",
             "name" : "Reward",
-            "regex" : "(eligible for a reward|rewards|will be paid)"
+            "regex" : "(eligible for a reward|rewards|will be paid|$|€|Rp|A$|C$|¥|E£|£)"
         },
         {
             "file" : "key_responsible_disclosure.txt",
@@ -39,6 +39,16 @@
             "file" : "key_based_platform.txt",
             "name" : "Platform",
             "regex" : "(Hackerone program)"
+        },
+        {
+            "file" : "key_based_scope.txt",
+            "name" : "Scope",
+            "regex" : "web-application|iOS: App Store|Windows|Store|Other|Android|In scope|Out of scope|Grade|Description|Scope|Target"
+        },
+        {
+            "file" : "key_severity_scope.txt",
+            "name" : "Severity",
+            "regex" : "Rewards|REWARDS|Rating|RATING|CVSS score|CVSS|Bounty|info|low|medium|high|critical|Grade|Description|Eligible|Ineligible|Assets|Asset"
         }
         
     ]
