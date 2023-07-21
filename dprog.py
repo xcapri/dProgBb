@@ -48,7 +48,7 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                 full_url = "{}{}".format(domain,xpath).replace(" ","")
                 getbody = requests.get(full_url, headers=self.headers,verify=False, allow_redirects=True, timeout=3) # request
                 if (getbody.status_code in [404, 403] 
-                        or any(error in getbody.text for error in ["Debug", "No route", "Not Found", "404"])):
+                        or any(error in getbody.text for error in ["Debug", "No route", "Not Found", "404", "Uncaught Exception"])):
                         print(Fore.RED+"[SKIPCHECK] "+Fore.RESET+full_url+Fore.RED+" Not Found "+Fore.RESET)
                 else:
                     self.checkKeyonResponse(getbody.text, full_url) # send body to key response    
