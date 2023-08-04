@@ -85,4 +85,10 @@
 /kleine-lettertjes/coordinated-vulnerability-disclosure
 /about-us/security/responsible-disclosure-policy
 /company/responsible-disclosure
-
+/disclosure
+/legaldocs/report-vulnerability
+/vulnerability
+/how-it-works/security
+/legal/vulnerability-disclosure-policy
+/documents/responsible-disclosure
+/privacy-and-security
