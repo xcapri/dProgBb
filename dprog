@@ -133,7 +133,7 @@ def main():
     elif not sys.stdin.isatty():
         yourls = [i.strip() for i in sys.stdin.readlines()]
     else:
-        yourls = [i.strip() for i in input("List : ").split()]
+        exit()
 
     rpm = Pool(args.thread)
     try:
