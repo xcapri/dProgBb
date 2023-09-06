@@ -4,14 +4,10 @@ import requests,datetime,os,random,json,optparse,re,sys,argparse
 from multiprocessing.dummy import Pool
 from requests.exceptions import *
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
-from colorama import init, Fore, Back, Style
-from urllib.parse import urlparse
-
-import requests
+from colorama import init, Fore
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 init()
-
 
 class dProgs:
     def __init__(self, options):
@@ -21,6 +17,8 @@ class dProgs:
         self.pathbounty_path = os.path.join(script_dir, 'helper/path.txt')
         self.keybounty = json.load(open(self.keybounty_path, "r", encoding="utf-8"))
         self.pathbounty = [i.strip() for i in open(self.pathbounty_path).readlines()]
+        self.wordlists_path = options.wordlists_path
+        self.regex_patterns = options.regex if options.regex else []
         self.reqexcpet = (ConnectionError, Timeout, ReadTimeout, TooManyRedirects, InvalidURL, ProxyError, HTTPError,
                           SSLError, ChunkedEncodingError)
         self.radncolor = [Fore.RED, Fore.CYAN, Fore.WHITE, Fore.GREEN, Fore.YELLOW, Fore.BLUE]
@@ -29,13 +27,24 @@ class dProgs:
             'Connection': 'keep-alive',
             'Cache-Control': 'max-age=0',
             'Upgrade-Insecure-Requests': '1',
-            'User-Agent': 'Mozilla/5.0 (Linux; Android 7.0; SM-G892A Bulid/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Moblie Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Linux; Android 7.0; SM-G892A Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
             'Accept-Encoding': 'gzip, deflate',
             'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8',
         }
-        self.output_folder = options.output if options.output else "results"  # Use "results" as default if not specified
+        self.output_folder = options.output if options.output else "results"
         os.makedirs(self.output_folder, exist_ok=True)
+        self.load_wordlists()
+
+        if self.regex_patterns and isinstance(self.regex_patterns, str):
+            self.regex_patterns = self.regex_patterns.split(",")
+
+    def load_wordlists(self):
+        if self.wordlists_path:
+            with open(self.wordlists_path, "r", encoding="utf-8") as wordlists_file:
+                self.wordlists = [line.strip() for line in wordlists_file.readlines()]
+        else:
+            self.wordlists = self.pathbounty 
 
     def bannEr(self):
         print(
@@ -55,17 +64,16 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
 
     def get(self, domain):
         try:
-            checkpath = " " if len(urlparse(domain).path) >= 1 else self.pathbounty
-            for xpath in checkpath:
+            for xpath in self.wordlists:
                 full_url = "{}{}".format(domain, xpath).replace(" ", "")
                 getbody = requests.get(full_url, headers=self.headers, verify=not self.options.ignore_ssl,
-                                       allow_redirects=True, timeout=3)  # request
+                                       allow_redirects=True, timeout=3)
                 if (getbody.status_code in [404, 403]
                         or any(error in getbody.text for error in ["Debug", "No route", "Not Found", "404", "Uncaught Exception"])):
                     if self.options.verbose:
                         print(Fore.RED + "[SKIPCHECK] " + Fore.RESET + full_url + Fore.RED + " Not Found " + Fore.RESET)
                 else:
-                    self.checkKeyonResponse(getbody.text, full_url)  # send body to key response
+                    self.checkKeyonResponse(getbody.text, full_url)
 
         except self.reqexcpet as e:
             pass
@@ -76,19 +84,20 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
     def checkKeyonResponse(self, body, domain):
         try:
             for _data in self.keybounty["data"]:
-                findkey = re.compile(r"" + _data["regex"], re.IGNORECASE)
-                output = findkey.findall(str(body))
-                if len(output) > 0:
-                    print("\n" + Fore.GREEN + "[POSSBOUNTY] " + Fore.RESET + domain + Fore.GREEN + " ( " + _data[
-                        "name"] + " | " + str(output) + " )" + Fore.RESET)
-                    datares = "\nFOUND=" + str(','.join(output)) + "\n" + domain
-                    output_filename = os.path.join(self.output_folder, "found_" + _data["file"])
-                    with open(output_filename, "a+") as saveres:
-                        saveres.write(datares + "\n")
-                else:
-                    if self.options.verbose:
-                        print(Fore.RED + "[NOTFOUND] " + Fore.RESET + domain + Fore.RED + " ( " + _data[
-                            "name"] + " | NULL )" + Fore.RESET)
+                for pattern in self.regex_patterns:
+                    findkey = re.compile(pattern, re.IGNORECASE)
+                    output = findkey.findall(str(body))
+                    if len(output) > 0:
+                        print("\n" + Fore.GREEN + "[POSSBOUNTY] " + Fore.RESET + domain + Fore.GREEN + " ( " + _data[
+                            "name"] + " | " + str(output) + " )" + Fore.RESET)
+                        datares = "\nFOUND=" + str(','.join(output)) + "\n" + domain
+                        output_filename = os.path.join(self.output_folder, "found_" + _data["file"])
+                        with open(output_filename, "a+") as saveres:
+                            saveres.write(datares + "\n")
+                    else:
+                        if self.options.verbose:
+                            print(Fore.RED + "[NOTFOUND] " + Fore.RESET + domain + Fore.RED + " ( " + _data[
+                                "name"] + " | NULL )" + Fore.RESET)
         except KeyboardInterrupt:
             print(f"CTRL+C Detect, Exit!")
             exit()
@@ -102,7 +111,6 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
             print(f"CTRL+C Detect, Exit!")
             exit()
 
-
 def main():
     parser = argparse.ArgumentParser(description="Detect Program Bug Bounty")
     parser.add_argument('-l', '--list', type=str, help='Specify a list of URLs')
@@ -111,6 +119,8 @@ def main():
     parser.add_argument('-is', '--ignore-ssl', action='store_true', help='Ignore SSL certificate warnings')
     parser.add_argument('-t', '--thread', type=int, default=10, help='Number of threads (default: 10)')
     parser.add_argument('-v', '--verbose', action='store_true', help='Enable verbose output')
+    parser.add_argument('-w', '--wordlists-path', type=str, help='Specify the path to wordlists file')
+    parser.add_argument('-r', '--regex', type=str, help='Specify one or more regex patterns for keyword matching')
     args = parser.parse_args()
 
     dProgsInstance = dProgs(args)
@@ -131,7 +141,6 @@ def main():
     except KeyboardInterrupt:
         print("CTRL+C Detect, Exit!")
         exit()
-
 
 if __name__ == '__main__':
     main()
