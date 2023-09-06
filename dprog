@@ -13,8 +13,8 @@ class dProgs:
     def __init__(self, options):
         self.options = options
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.keybounty_path = os.path.join(script_dir, 'helper/regex.json')
-        self.pathbounty_path = os.path.join(script_dir, 'helper/path.txt')
+        self.keybounty_path = os.path.join(script_dir, 'core/helper/regex.json')
+        self.pathbounty_path = os.path.join(script_dir, 'core/helper/path.txt')
         self.keybounty = json.load(open(self.keybounty_path, "r", encoding="utf-8"))
         self.pathbounty = [i.strip() for i in open(self.pathbounty_path).readlines()]
         self.wordlists_path = options.wordlists_path
