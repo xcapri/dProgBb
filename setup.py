@@ -6,7 +6,7 @@ setup(
     description='Detect Program Bug Bounty',
     author='pikpikcu&Hasim',
     author_email='N/A',
-    url='https://github.com/xcapri/dProgBb',
+    url='https://github.com/pikpikcu/dProgBb',
     packages=find_packages(),
     install_requires=[
         'requests',
