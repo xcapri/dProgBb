@@ -17,7 +17,6 @@ setup(
             'dprog=core.main:main',
         ],
     },
-    package_data={'core.helper': ['regex.json', 'path.txt']},
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
