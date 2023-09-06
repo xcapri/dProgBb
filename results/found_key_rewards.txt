@@ -10,3 +10,6 @@ https://www.classdojo.com/securitydisclosureprogram/
 
 FOUND=rewards,eligible for a reward,eligible for a reward
 https://curl.se/docs/bugbounty.html
+
+FOUND=,
+https://example.com
