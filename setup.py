@@ -1,4 +1,7 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, os
+
+# helper
+helper = "helper{sep}*".format(sep=os.sep)
 
 setup(
     name='dProgBb',
@@ -8,6 +11,8 @@ setup(
     author_email='N/A',
     url='https://github.com/xcapri/dProgBb',
     packages=find_packages(),
+    package_data={'core': ['helper']},
+    include_package_data=True,
     install_requires=[
         'requests',
         'colorama',
@@ -17,7 +22,6 @@ setup(
             'dprog=core.main:main',
         ],
     },
-    package_data={'core.helper': ['regex.json', 'path.txt']},
     classifiers=[
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
