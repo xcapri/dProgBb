@@ -1,7 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from setuptools import setup, find_packages, os
 
+
 # helper
-helper = "helper{sep}*".format(sep=os.sep)
+helper = "helper{sep}*.*".format(sep=os.sep)
 
 setup(
     name='dProgBb',
@@ -11,7 +15,7 @@ setup(
     author_email='N/A',
     url='https://github.com/xcapri/dProgBb',
     packages=find_packages(),
-    package_data={'core': ['helper']},
+    package_data={'core': [helper]},
     include_package_data=True,
     install_requires=[
         'requests',
