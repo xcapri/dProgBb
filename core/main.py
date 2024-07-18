@@ -68,8 +68,7 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
                 full_url = "{}{}".format(domain, xpath).replace(" ", "")
                 getbody = requests.get(full_url, headers=self.headers, verify=not self.options.ignore_ssl,
                                        allow_redirects=True, timeout=3)
-                if (getbody.status_code in [404, 403]
-                        or any(error in getbody.text for error in ["Debug", "No route", "Not Found", "404", "Uncaught Exception"])):
+                if 400 <= getbody.status_code < 600:
                     if self.options.verbose:
                         print(Fore.RED + "[SKIPCHECK] " + Fore.RESET + full_url + Fore.RED + " Not Found " + Fore.RESET)
                 else:
