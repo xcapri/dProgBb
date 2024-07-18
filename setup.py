@@ -9,7 +9,7 @@ helper = "helper{sep}*.*".format(sep=os.sep)
 
 setup(
     name='dProgBb',
-    version='1.1',
+    version='1.2',
     description='Detect Program Bug Bounty',
     author='pikpikcu&Hasim',
     author_email='N/A',
