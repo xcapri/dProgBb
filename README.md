@@ -19,11 +19,11 @@ dProg is tool for Bug bounty program detection by similar <i>keyword</i> on bug 
 
 #### Usage
 ```
-usage: dprog [-h] [-l LIST] [-u URL] [-o OUTPUT] [-is] [-t THREAD] [-v]
+usage: dprog [-h] [-l LIST] [-u URL] [-o OUTPUT] [-is] [-t THREAD] [-v] [-w WORDLISTS_PATH] [-r REGEX]
 
 Detect Program Bug Bounty
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -l LIST, --list LIST  Specify a list of URLs
   -u URL, --url URL     Specify a single URL
@@ -33,7 +33,10 @@ optional arguments:
   -t THREAD, --thread THREAD
                         Number of threads (default: 10)
   -v, --verbose         Enable verbose output
-
+  -w WORDLISTS_PATH, --wordlists-path WORDLISTS_PATH
+                        Specify the path to wordlists file
+  -r REGEX, --regex REGEX
+                        Specify one or more regex patterns for keyword matching
 ```
 
 You can run like
