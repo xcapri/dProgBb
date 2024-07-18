@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import requests,datetime,os,random,json,optparse,re,sys,argparse
+import requests, datetime, os, random, json, argparse, re, sys
 from multiprocessing.dummy import Pool
 from requests.exceptions import *
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
@@ -84,20 +84,19 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
     def checkKeyonResponse(self, body, domain):
         try:
             for _data in self.keybounty["data"]:
-                for pattern in self.regex_patterns:
-                    findkey = re.compile(pattern, re.IGNORECASE)
-                    output = findkey.findall(str(body))
-                    if len(output) > 0:
-                        print("\n" + Fore.GREEN + "[POSSBOUNTY] " + Fore.RESET + domain + Fore.GREEN + " ( " + _data[
-                            "name"] + " | " + str(output) + " )" + Fore.RESET)
-                        datares = "\nFOUND=" + str(','.join(output)) + "\n" + domain
-                        output_filename = os.path.join(self.output_folder, "found_" + _data["file"])
-                        with open(output_filename, "a+") as saveres:
-                            saveres.write(datares + "\n")
-                    else:
-                        if self.options.verbose:
-                            print(Fore.RED + "[NOTFOUND] " + Fore.RESET + domain + Fore.RED + " ( " + _data[
-                                "name"] + " | NULL )" + Fore.RESET)
+                findkey = re.compile(_data["regex"], re.IGNORECASE)
+                output = findkey.findall(str(body))
+                if len(output) > 0:
+                    print("\n" + Fore.GREEN + "[POSSBOUNTY] " + Fore.RESET + domain + Fore.GREEN + " ( " + _data[
+                        "name"] + " | " + str(output) + " )" + Fore.RESET)
+                    datares = "\nFOUND=" + str(','.join(output)) + "\n" + domain
+                    output_filename = os.path.join(self.output_folder, "found_" + _data["file"])
+                    with open(output_filename, "a+") as saveres:
+                        saveres.write(datares + "\n")
+                else:
+                    if self.options.verbose:
+                        print(Fore.RED + "[NOTFOUND] " + Fore.RESET + domain + Fore.RED + " ( " + _data[
+                            "name"] + " | NULL )" + Fore.RESET)
         except KeyboardInterrupt:
             print(f"CTRL+C Detect, Exit!")
             exit()
