@@ -1,0 +1,9 @@
+
+FOUND=responsible-disclosure
+https://www.kandji.io/security/
+
+FOUND=responsible-disclosure
+https://www.kandji.io/security
+
+FOUND=responsible-disclosure
+https://www.kandji.io/security

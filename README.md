@@ -6,12 +6,12 @@ dProg is tool for Bug bounty program detection by similar <i>keyword</i> on bug 
 
 ## Features
 
-- Easily check multiple URLs for Bug Bounty Detector .
+- Easily check multiple URLs for Bug Bounty Detector.
 - Customizable keyword patterns for detection.
 - Multithreaded scanning for faster results.
 - Save positive findings to a file for further analysis.
 
-#### Picture
+#### Show Case
 ![image](https://user-images.githubusercontent.com/43540712/182825238-21d9f788-7b1c-4698-9287-8d5d729ac5d8.png)
 
 #### Instalation

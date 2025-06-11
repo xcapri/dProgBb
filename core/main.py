@@ -64,17 +64,30 @@ _/   _//_//        _//    _//  _//  _//  _//_/      _/_//   _//
 
     def get(self, domain):
         try:
-            for xpath in self.wordlists:
-                full_url = "{}{}".format(domain, xpath).replace(" ", "")
+            parsed_path = domain.split("://", 1)[-1]
+            path_only = parsed_path[parsed_path.find("/"):] if "/" in parsed_path else ""
+
+            if path_only and path_only != "/":
+                full_url = domain.strip()
                 getbody = requests.get(full_url, headers=self.headers, verify=not self.options.ignore_ssl,
-                                       allow_redirects=True, timeout=3)
+                                    allow_redirects=True, timeout=3)
                 if 400 <= getbody.status_code < 600:
                     if self.options.verbose:
                         print(Fore.RED + "[SKIPCHECK] " + Fore.RESET + full_url + Fore.RED + " Not Found " + Fore.RESET)
                 else:
                     self.checkKeyonResponse(getbody.text, full_url)
+            else:
+                for xpath in self.wordlists:
+                    full_url = "{}{}".format(domain.rstrip("/"), "/" + xpath.lstrip("/")).replace(" ", "")
+                    getbody = requests.get(full_url, headers=self.headers, verify=not self.options.ignore_ssl,
+                                        allow_redirects=True, timeout=3)
+                    if 400 <= getbody.status_code < 600:
+                        if self.options.verbose:
+                            print(Fore.RED + "[SKIPCHECK] " + Fore.RESET + full_url + Fore.RED + " Not Found " + Fore.RESET)
+                    else:
+                        self.checkKeyonResponse(getbody.text, full_url)
 
-        except self.reqexcpet as e:
+        except self.reqexcpet:
             pass
         except KeyboardInterrupt:
             print(f"CTRL+C Detect, Exit!")

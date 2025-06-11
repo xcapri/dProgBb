@@ -1,0 +1,12 @@
+
+FOUND=description,description,description,description,description,description,target,target,other,target,target,target,target,target,target
+https://www.kandji.io/security/
+
+FOUND=description,description,description,description,description,description,target,target,other,target,target,target,target,target,target
+https://www.kandji.io/security
+
+FOUND=description,description,description,description,description,description,target,target,other,target,target,target,target,target,target
+https://www.kandji.io/security
+
+FOUND=description,description,description,description,description,description,description,target,target,other,target,target,Windows,Windows,Windows,target,windows,target,Grade,Grade,Store,other,windows,target,target,target,target,target,target,other,other,other,store,store,other,other,store,store,other,windows,target,target,target,target,target,Scope,Scope,target
+https://www.kandji.io/contact
