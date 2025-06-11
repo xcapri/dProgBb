@@ -12,7 +12,7 @@ dProg is tool for Bug bounty program detection by similar <i>keyword</i> on bug 
 - Save positive findings to a file for further analysis.
 
 #### Show Case
-![image](https://user-images.githubusercontent.com/43540712/182825238-21d9f788-7b1c-4698-9287-8d5d729ac5d8.png)
+![image](demo.gif)
 
 #### Instalation
 - pip3 install git+https://github.com/xcapri/dProgBb.git
